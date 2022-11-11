@@ -9,19 +9,39 @@ import SwiftUI
 
 struct HomeCellType: Identifiable {
     var id: Int
-    var title: String
-    var image: String?
+    var person: String
+    var image: String
+    var hours: String
 }
 
 struct HomeViewCell: View {
-    var title: String
-    var image: String?
+    var person: String
+    var image: String
+    var hours: String
     
     var body: some View {
         VStack {
-            Text(title)
+            HStack {
+                Image("selfie")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .clipShape(Circle())
+                    .shadow(radius: 10)
+                
+                Text(person)
+                
+                Spacer()
+                
+                Text(hours)
+                
+                Button {
+                    print("tapped pencil")
+                } label: {
+                    Label("Edit", systemImage: "pencil")
+                }
+            }
             
-            Image(image ?? "")
+            Image(image)
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
                 .padding([.leading, .trailing])
@@ -31,6 +51,6 @@ struct HomeViewCell: View {
 
 struct HomeViewCell_Previews: PreviewProvider {
     static var previews: some View {
-        HomeViewCell(title: "Hi")
+        HomeViewCell(person: "Texto", image: "", hours: "")
     }
 }

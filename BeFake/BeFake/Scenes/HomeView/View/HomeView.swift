@@ -9,24 +9,24 @@ import SwiftUI
 
 struct HomeView: View {
     
-    let image: [HomeCellType] = [
-        HomeCellType(id: 0, title: "Olá Mundo"),
-        HomeCellType(id: 1, title: "Oi Mundo"),
-        HomeCellType(id: 2, title: "Hello World"),
-        HomeCellType(id: 3, title: "Hi World"),
-        HomeCellType(id: 4, title: "Bye")
+    let data: [HomeCellType] = [
+        HomeCellType(id: 0, person: "Jefrey", image: "selfie", hours: "14hrs atrasado"),
+        HomeCellType(id: 1, person: "Melody", image: "selfie", hours: "12hrs atrasado"),
+        HomeCellType(id: 2, person: "Lucas", image: "selfie", hours: "2 hrs atrasado"),
+        HomeCellType(id: 3, person: "Fernanda", image: "selfie", hours: "15:32:55"),
+        HomeCellType(id: 4, person: "Bryan", image: "selfie", hours: "30 min atrasado")
     ]
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(image) { data in
-                    HomeViewCell(title: data.title)
+                ForEach(data) { data in
+                    HomeViewCell(person: data.person, image: data.image, hours: data.hours)
                 }
             }
-            .padding([.top, .bottom])
+            .padding([.bottom])
+            .navigationTitle("BeFake.")
         }
-        .navigationTitle("BeFake.")
     }
     
 }
