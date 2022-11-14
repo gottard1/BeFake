@@ -19,16 +19,27 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(data) { data in
-                    HomeViewCell(person: data.person, image: data.image, hours: data.hours)
+            ScrollView {
+                VStack {
+                    ForEach(data) { data in
+                        HomeViewCell(person: data.person, image: data.image, hours: data.hours)
+                    }
                 }
             }
-            .padding([.bottom])
-            .navigationTitle("BeFake.")
+            .navigationTitle("BeFake")
+            .navigationBarTitleDisplayMode(.inline)
+            .edgesIgnoringSafeArea(.bottom)
+            .navigationBarItems(
+                leading:
+                    RoundedButton(action: {
+                        print("perfil")
+                    }, image: "selfie"),
+                trailing:
+                    RoundedButton(action: {
+                        print("amigos")
+                    }, image: "selfie"))
         }
     }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C332CA97291DDB9B008B211D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C332CA96291DDB9B008B211D /* HomeViewModel.swift */; };
 		C332CA9B291DE2DE008B211D /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C332CA9A291DE2DE008B211D /* HomeViewCell.swift */; };
+		C380193D2920562900B193E6 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380193C2920562900B193E6 /* RoundedButton.swift */; };
 		C3DAAE78291B2EFD00030A54 /* BeFakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAAE77291B2EFD00030A54 /* BeFakeApp.swift */; };
 		C3DAAE7A291B2EFD00030A54 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAAE79291B2EFD00030A54 /* HomeView.swift */; };
 		C3DAAE7C291B2EFE00030A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3DAAE7B291B2EFE00030A54 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		C332CA96291DDB9B008B211D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C332CA9A291DE2DE008B211D /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		C380193C2920562900B193E6 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		C3DAAE74291B2EFD00030A54 /* BeFake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeFake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DAAE77291B2EFD00030A54 /* BeFakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeFakeApp.swift; sourceTree = "<group>"; };
 		C3DAAE79291B2EFD00030A54 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		C332CA98291DE2AA008B211D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C380193B2920561A00B193E6 /* Buttons */,
 				C332CA99291DE2BD008B211D /* Cell */,
 			);
 			path = Components;
@@ -139,6 +142,14 @@
 				C332CA9A291DE2DE008B211D /* HomeViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C380193B2920561A00B193E6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C380193C2920562900B193E6 /* RoundedButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		C3DAAE6B291B2EFD00030A54 = {
@@ -331,6 +342,7 @@
 				C332CA9B291DE2DE008B211D /* HomeViewCell.swift in Sources */,
 				C332CA97291DDB9B008B211D /* HomeViewModel.swift in Sources */,
 				C3DAAE78291B2EFD00030A54 /* BeFakeApp.swift in Sources */,
+				C380193D2920562900B193E6 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +501,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BeFake/Preview Content\"";
-				DEVELOPMENT_TEAM = Z86DZ4SUMG;
+				DEVELOPMENT_TEAM = 99P9P5HJ9J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
@@ -497,12 +509,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.BeFake.br;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.BeFake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -521,7 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BeFake/Preview Content\"";
-				DEVELOPMENT_TEAM = Z86DZ4SUMG;
+				DEVELOPMENT_TEAM = 99P9P5HJ9J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
@@ -529,12 +542,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.BeFake.br;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.BeFake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

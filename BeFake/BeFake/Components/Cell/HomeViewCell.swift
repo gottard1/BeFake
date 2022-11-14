@@ -15,18 +15,23 @@ struct HomeCellType: Identifiable {
 }
 
 struct HomeViewCell: View {
+    let screenWidht = UIScreen.main.bounds.size.width
+    
     var person: String
     var image: String
     var hours: String
     
     var body: some View {
         VStack {
-            HStack {
+            Divider()
+            
+            HStack(alignment: .center) {
                 Image("selfie")
                     .resizable()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 30, height: 30)
                     .clipShape(Circle())
                     .shadow(radius: 10)
+                    .padding([.leading])
                 
                 Text(person)
                 
@@ -37,20 +42,25 @@ struct HomeViewCell: View {
                 Button {
                     print("tapped pencil")
                 } label: {
-                    Label("Edit", systemImage: "pencil")
+                    Image(systemName: "column")
                 }
+                .padding([.trailing])
             }
+            .frame(width: screenWidht)
+            
+            Divider()
             
             Image(image)
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-                .padding([.leading, .trailing])
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: screenWidht - 10, height: screenWidht * 1.3)
+                .cornerRadius(25)
         }
     }
 }
 
-struct HomeViewCell_Previews: PreviewProvider {
+struct HomeViewCell_Preview: PreviewProvider {
     static var previews: some View {
-        HomeViewCell(person: "Texto", image: "", hours: "")
+        HomeViewCell(person: "Marcel", image: "selfie", hours: "15hrs")
     }
 }
