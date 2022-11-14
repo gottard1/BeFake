@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85F3B2FF2922CD66004CA97A /* DisplayDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3B2FE2922CD66004CA97A /* DisplayDataCell.swift */; };
 		C332CA97291DDB9B008B211D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C332CA96291DDB9B008B211D /* HomeViewModel.swift */; };
 		C332CA9B291DE2DE008B211D /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C332CA9A291DE2DE008B211D /* HomeViewCell.swift */; };
 		C380193D2920562900B193E6 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380193C2920562900B193E6 /* RoundedButton.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85F3B2FE2922CD66004CA97A /* DisplayDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataCell.swift; sourceTree = "<group>"; };
 		C332CA96291DDB9B008B211D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C332CA9A291DE2DE008B211D /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		C380193C2920562900B193E6 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -77,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85F3B3002922DCD5004CA97A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C332CA9A291DE2DE008B211D /* HomeViewCell.swift */,
+				85F3B2FE2922CD66004CA97A /* DisplayDataCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		C332CA8F291DDB22008B211D /* Commum */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +150,7 @@
 		C332CA99291DE2BD008B211D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C332CA9A291DE2DE008B211D /* HomeViewCell.swift */,
+				85F3B3002922DCD5004CA97A /* Home */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -340,6 +351,7 @@
 			files = (
 				C3DAAE7A291B2EFD00030A54 /* HomeView.swift in Sources */,
 				C332CA9B291DE2DE008B211D /* HomeViewCell.swift in Sources */,
+				85F3B2FF2922CD66004CA97A /* DisplayDataCell.swift in Sources */,
 				C332CA97291DDB9B008B211D /* HomeViewModel.swift in Sources */,
 				C3DAAE78291B2EFD00030A54 /* BeFakeApp.swift in Sources */,
 				C380193D2920562900B193E6 /* RoundedButton.swift in Sources */,
