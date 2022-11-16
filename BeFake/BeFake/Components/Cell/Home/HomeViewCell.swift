@@ -15,7 +15,6 @@ struct HomeCellType: Identifiable {
 }
 
 struct HomeViewCell: View {
-    let screenWidht = UIScreen.main.bounds.size.width
     
     let data: HomeCellType
     
@@ -29,7 +28,7 @@ struct HomeViewCell: View {
             Image(data.picture)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: screenWidht - 10, height: screenWidht * 1.3)
+                .frame(width: UIScreen.screenWidht - 10, height: UIScreen.screenWidht * 1.3)
                 .cornerRadius(25)
                 .shadow(radius: 8)
             
@@ -46,9 +45,15 @@ struct HomeViewCell: View {
                         .padding([.leading, .trailing])
                 }
             }
-            .frame(width: screenWidht, alignment: .leading)
+            .frame(width: UIScreen.screenWidht, alignment: .leading)
             
             
         }
+    }
+}
+
+struct Previews_HomeViewCell_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

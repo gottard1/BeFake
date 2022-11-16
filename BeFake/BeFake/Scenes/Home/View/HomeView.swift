@@ -9,26 +9,24 @@ import SwiftUI
 
 struct HomeView: View {
     
-    let data: [HomeCellType] = [
-        HomeCellType(id: 0,
-                     userData: UserData(profileImage: "selfie",
-                                        name: "Faustão",
-                                        hours: "1hr atrasado"),
-                     picture: "selfie",
-                     title: "Passando um tempo com os amigos Passando um tempo com os amigos Passando um tempo com os amigos"),
-        HomeCellType(id: 1,
-                     userData: UserData(profileImage: "selfie",
-                                        name: "Keppo",
-                                        hours: "4hr atrasado"),
-                     picture: "selfie",
-                     title: "Passando um tempo com os amigos"),
-    ]
+    @ObservedObject private var viewModel: HomeViewModel
+    
+    @State private var goingToFriends: Bool = false
+    @State private var goingToProfile: Bool = false
+    
+    init(viewModel: HomeViewModel = .init()) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
-                    ForEach(data) { data in
+                    NavigationLink(destination: ProfileView(),
+                                   isActive: $goingToProfile) {
+                                EmptyView()
+                            }
+                    ForEach(viewModel.data) { data in
                         HomeViewCell(data: data)
                     }
                 }
@@ -38,10 +36,11 @@ struct HomeView: View {
             .navigationBarItems(
                 leading:
                     RoundedButton(action: {
-                        print("friends")
+                        self.goingToFriends = true
                     }, image: "friends"),
                 trailing:
                     RoundedButton(action: {
+                        self.goingToProfile = true
                         print("perfil")
                     }, image: "selfie"))
         }
