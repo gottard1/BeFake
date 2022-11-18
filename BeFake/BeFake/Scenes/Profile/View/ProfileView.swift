@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Environment(\.dismiss) private var dismiss
     
     @ObservedObject private var viewModel: ProfileViewModel
     
@@ -17,11 +18,8 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
-            Image("selfie")
-                .resizable(resizingMode: .tile)
-                .frame(width: 150, height: 150)
-                .clipShape(Circle())
-                .shadow(radius: 10)
+            RoundedImage(image: "selfie")
+                .frame(width: 200, height: 150)
             
             Text(viewModel.data.name)
                 .font(.title.bold())
@@ -31,30 +29,21 @@ struct ProfileView: View {
                 .font(.subheadline)
                 .padding(.bottom)
             
-            HStack {
-                Text(viewModel.data.yourMemories)
-                    .font(.system(size: 25, weight: .bold))
-                
-                Spacer(minLength: 10)
-                
-                HStack {
-                    Image(systemName: "lock")
-                        .resizable()
-                        .frame(width: 8, height: 11)
-                        .foregroundColor(.gray)
-                    
-                    Text(viewModel.data.visibleOnlyToYou)
-                        .font(.system(size: 12))
-                        .foregroundColor(.gray)
-                }
-            }
-            .padding([.leading, .trailing])
+            MemoriesView(memories: viewModel.data.yourMemories,
+                         visibleOnlyToYou: viewModel.data.visibleOnlyToYou)
             
             Rectangle() // provisório
                 .foregroundColor(.blue)
         }
         .navigationTitle("Perfil")
+        .navigationBarBackButtonHidden(true)
         .navigationBarItems(
+            leading:
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "chevron.backward")
+                }),
             trailing:
                 Button(action: {
                     print("Opções")

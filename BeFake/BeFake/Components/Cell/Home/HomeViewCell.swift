@@ -18,6 +18,10 @@ struct HomeViewCell: View {
     
     let data: HomeCellType
     
+    init(_ data: HomeCellType) {
+        self.data = data
+    }
+    
     var body: some View {
         VStack(spacing: 8) {
             Spacer(minLength: 16)
@@ -43,6 +47,7 @@ struct HomeViewCell: View {
                 } label: {
                     Text("Adicione um comentário...")
                         .padding([.leading, .trailing])
+                        .foregroundColor(.gray)
                 }
             }
             .frame(width: UIScreen.screenWidht, alignment: .leading)

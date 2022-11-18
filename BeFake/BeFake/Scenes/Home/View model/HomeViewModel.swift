@@ -22,6 +22,11 @@ class HomeViewModel: ObservableObject {
                                         hours: "4hr atrasado"),
                      picture: "selfie",
                      title: "Passando um tempo com os amigos"),
+        HomeCellType(id: 2,
+                     userData: UserData(profileImage: "selfie",
+                                        name: "Kappa",
+                                        hours: "4hr atrasado"),
+                     picture: "selfie")
     ]
     
 }

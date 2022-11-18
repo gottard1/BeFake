@@ -22,12 +22,15 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    NavigationLink(destination: ProfileView(),
-                                   isActive: $goingToProfile) {
+                    NavigationLink(destination: ProfileView(), isActive: $goingToProfile) {
                                 EmptyView()
-                            }
+                    }
+                    NavigationLink(destination: FriendsView(), isActive: $goingToFriends) {
+                                EmptyView()
+                    }
+                    
                     ForEach(viewModel.data) { data in
-                        HomeViewCell(data: data)
+                        HomeViewCell(data)
                     }
                 }
             }
@@ -35,14 +38,21 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(
                 leading:
-                    RoundedButton(action: {
+                    Button(action: {
                         self.goingToFriends = true
-                    }, image: "friends"),
+                    }, label: {
+                        Image(systemName: "person.2.fill")
+                                    .foregroundColor(.black.opacity(0.7))
+                    }),
                 trailing:
-                    RoundedButton(action: {
+                    Button(action: {
                         self.goingToProfile = true
                         print("perfil")
-                    }, image: "selfie"))
+                    }, label: {
+                        RoundedImage(image: "selfie")
+                            .frame(width: 50, height: 50)
+                    })
+            )
         }
     }
 }
