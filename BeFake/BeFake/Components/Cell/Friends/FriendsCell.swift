@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+struct FriendsCellData: Identifiable {
+    var id: Int
+    
+    var image: Image
+    var name: String
+    var username: String
+    
+    var contactName: String?
+    var commumFriends: Int?
+}
+
 struct FriendsCell: View {
     var data: FriendsCellData
     
@@ -18,11 +29,11 @@ struct FriendsCell: View {
         HStack(alignment: .center) {
             RoundedImage(image: "selfie")
                 .frame(width: 100)
-                .fixedSize(horizontal: true, vertical: false)
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(data.name)
                     .font(.system(size: 15).bold())
+                    .lineLimit(1)
                 
                 Text(data.username)
                     .font(.system(size: 14).italic())
@@ -52,15 +63,17 @@ struct FriendsCell: View {
                     .frame(width: 90, height: 25)
                     .font(.system(size: 13, weight: .bold))
                     .foregroundColor(.white)
-                    .background(Color.black.opacity(0.6))
+                    .background(.gray)
                     .clipShape(RoundedRectangle(cornerRadius: 30))
             }
+            .foregroundColor(.gray)
             
             Button {
                 print("Fechando")
             } label: {
                 Image(systemName: "xmark")
             }
+            .padding(.trailing)
             .foregroundColor(.gray)
             
         }

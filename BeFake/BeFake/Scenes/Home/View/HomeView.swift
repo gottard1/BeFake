@@ -34,7 +34,6 @@ struct HomeView: View {
                     }
                 }
             }
-            .navigationTitle("BeFake")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(
                 leading:
@@ -42,7 +41,7 @@ struct HomeView: View {
                         self.goingToFriends = true
                     }, label: {
                         Image(systemName: "person.2.fill")
-                                    .foregroundColor(.black.opacity(0.7))
+                            .foregroundColor(.gray)
                     }),
                 trailing:
                     Button(action: {
@@ -53,6 +52,19 @@ struct HomeView: View {
                             .frame(width: 50, height: 50)
                     })
             )
+            .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            HStack {
+                                Button(action: {
+                                    print("First")
+                                }, label: {
+                                    Text("BeFake")
+                                        .font(.system(size: 20, weight: .bold))
+                                        .foregroundColor(Color.accentColor)
+                                })
+                            }
+                        }
+                    }
         }
     }
 }

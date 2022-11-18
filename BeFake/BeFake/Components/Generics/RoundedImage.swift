@@ -15,6 +15,6 @@ struct RoundedImage: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
-            .shadow(radius: 10)
+            .shadow(radius: 5)
     }
 }

@@ -37,6 +37,7 @@ struct UserInformationCell: View {
             } label: {
                 Image(systemName: "pencil") // change image after
             }
+            .foregroundColor(.gray)
             .padding([.trailing])
         }
         .frame(width: UIScreen.main.bounds.size.width)

@@ -7,83 +7,56 @@
 
 import SwiftUI
 
-struct FriendsCellData: Identifiable {
-    var id: Int
-    
-    var image: Image
-    var name: String
-    var username: String
-    
-    var contactName: String?
-    var commumFriends: Int?
-}
-
 struct FriendsView: View {
     @Environment(\.dismiss) private var dismiss
     
-    var data: [FriendsCellData] = [
-        FriendsCellData(
-            id: 0,
-            image: Image("Selfie"),
-            name: "Lucas André Zenke",
-            username: "Zkanm",
-            contactName: "Zenek"
-        ),
-        FriendsCellData(
-            id: 1,
-            image: Image("Selfie"),
-            name: "Emanuella Eduarda Ferrari",
-            username: "manuef",
-            commumFriends: 9
-        ),
-        FriendsCellData(
-            id: 2,
-            image: Image("Selfie"),
-            name: "Daniel Mendes de Almeida",
-            username: "Daniboy",
-            commumFriends: 2
-        ),
-        FriendsCellData(
-            id: 3,
-            image: Image("Selfie"),
-            name: "Ian Augusto Nunes",
-            username: "ianagtnunes",
-            commumFriends: 15
-        ),
-        FriendsCellData(
-            id: 4,
-            image: Image("Selfie"),
-            name: "Mariana",
-            username: "maaregs",
-            contactName: "Mariana"
-        )
-    ]
+    @ObservedObject private var viewModel: FriendsViewModel
     
+    init(viewModel: FriendsViewModel = .init()) {
+        self.viewModel = viewModel
+    }
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading) {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
                 
-                Section("ADICIONE DOS SEUS CONTATOS") {
-                    ForEach(data, id: \.id) { contact in
+                Section {
+                    ForEach(viewModel.data, id: \.id) { contact in
                         if let _ = contact.contactName {
                             FriendsCell(contact)
                         }
                     }
+                } header: {
+                    Text("ADICIONE DOS SEUS CONTATOS")
+                        .font(.system(size: 18, weight: .bold))
+                        .padding([.leading, .trailing])
                 }
-                .padding([.leading, .trailing])
                 
-                Section("PESSOAS QUE TALVEZ VOCÊ CONHEÇA") {
-                    ForEach(data, id: \.id) { contact in
+                
+                Section {
+                    ForEach(viewModel.data, id: \.id) { contact in
                         if let _ = contact.commumFriends {
                             FriendsCell(contact)
                         }
                     }
+                } header: {
+                    Text("PESSOAS QUE TALVEZ VOCÊ CONHEÇA")
+                        .font(.system(size: 18, weight: .bold))
+                        .padding([.leading, .trailing])
                 }
-                .padding([.leading, .trailing])
                 
             }
             .navigationTitle("BeFake")
+            .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.gray)
+                    })
+            )
         }
     }
 }
