@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-struct FriendsCellData: Identifiable {
-    var id: Int
-    
-    var image: Image
-    var name: String
-    var username: String
-    
-    var contactName: String?
-    var commumFriends: Int?
-}
-
 struct FriendsCell: View {
     var data: FriendsCellData
     
@@ -56,17 +45,27 @@ struct FriendsCell: View {
             
             Spacer()
             
-            Button {
-                print("Adicionando")
-            } label: {
-                Text("ADICIONAR")
-                    .frame(width: 90, height: 25)
+            if data.contactName != nil || data.commumFriends != nil {
+                Button {
+                    print("Adicionando")
+                } label: {
+                    Text("ADICIONAR")
+                        .frame(width: 90, height: 25)
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                }
+                .foregroundColor(.gray)
+            } else if data.pending ?? false {
+                Text("SOLICITADO")
+                    .frame(width: 100, height: 25)
                     .font(.system(size: 13, weight: .bold))
                     .foregroundColor(.white)
                     .background(.gray)
                     .clipShape(RoundedRectangle(cornerRadius: 30))
+                    .foregroundColor(.gray)
             }
-            .foregroundColor(.gray)
             
             Button {
                 print("Fechando")

@@ -12,38 +12,24 @@ struct FriendsView: View {
     
     @ObservedObject private var viewModel: FriendsViewModel
     
+    @State private var searchedText = ""
+    
     init(viewModel: FriendsViewModel = .init()) {
         self.viewModel = viewModel
     }
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack {
+                TextField(" \(Image(systemName: "magnifyingglass")) Procure por mais pessoas!", text: $searchedText)
+                    .padding()
+                    .frame(width: UIScreen.screenWidht - 20, height: 55, alignment: .center)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 14)
+                                .stroke(.gray, lineWidth: 2)
+                        )
+                    .padding()
                 
-                Section {
-                    ForEach(viewModel.data, id: \.id) { contact in
-                        if let _ = contact.contactName {
-                            FriendsCell(contact)
-                        }
-                    }
-                } header: {
-                    Text("ADICIONE DOS SEUS CONTATOS")
-                        .font(.system(size: 18, weight: .bold))
-                        .padding([.leading, .trailing])
-                }
-                
-                
-                Section {
-                    ForEach(viewModel.data, id: \.id) { contact in
-                        if let _ = contact.commumFriends {
-                            FriendsCell(contact)
-                        }
-                    }
-                } header: {
-                    Text("PESSOAS QUE TALVEZ VOCÊ CONHEÇA")
-                        .font(.system(size: 18, weight: .bold))
-                        .padding([.leading, .trailing])
-                }
-                
+                SectionFriendsView(viewModel.data)
             }
             .navigationTitle("BeFake")
             .navigationBarBackButtonHidden(true)
@@ -54,7 +40,7 @@ struct FriendsView: View {
                         dismiss()
                     }, label: {
                         Image(systemName: "chevron.backward")
-                            .foregroundColor(.gray)
+                            .foregroundColor(.lightGray)
                     })
             )
         }

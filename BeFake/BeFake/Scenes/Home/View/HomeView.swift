@@ -48,7 +48,7 @@ struct HomeView: View {
                         self.goingToFriends = true
                     }, label: {
                         Image(systemName: "person.2.fill")
-                            .foregroundColor(.gray)
+                            .foregroundColor(.lightGray)
                     }),
                 trailing:
                     Button(action: {
@@ -69,7 +69,7 @@ struct HomeView: View {
                                 }, label: {
                                     Text("BeFake")
                                         .font(.system(size: 20, weight: .bold))
-                                        .foregroundColor(Color.accentColor)
+                                        .foregroundColor(.defaultText)
                                 })
                             }
                         }
