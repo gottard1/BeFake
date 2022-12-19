@@ -6,27 +6,46 @@
 //
 
 import Foundation
-import SwiftUI
 
-struct FriendsModel {
+struct FriendsModel: Decodable {
     var section: [FriendsSection]
+    
+    enum CodingKeys: String, CodingKey {
+        case section = "section"
+    }
 }
 
-struct FriendsSection: Identifiable {
-    var id: Int
+struct FriendsSection: Decodable, Identifiable {
+    var id = UUID()
+    
     var title: String
     var data: [FriendsCellData]
     
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
+        case data = "data"
+    }
+    
 }
 
-struct FriendsCellData: Identifiable {
-    var id: Int
+struct FriendsCellData: Decodable, Identifiable {
+    var id = UUID()
     
-    var image: Image
+    var image: String
     var name: String
     var username: String
     
     var contactName: String?
     var commumFriends: Int?
     var pending: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case image = "image"
+        case name = "name"
+        case username = "username"
+        
+        case contactName = "contactName"
+        case commumFriends = "commumFriends"
+        case pending = "pending"
+    }
 }

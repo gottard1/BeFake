@@ -8,15 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		8528B9E0292D5017008EE3B5 /* SectionsFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528B9DF292D5017008EE3B5 /* SectionsFriendsView.swift */; };
+		852C1AC62948A08300256321 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C1AC52948A08300256321 /* NetworkViewModel.swift */; };
+		852C1AC92948DEC700256321 /* FriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C1AC82948DEC700256321 /* FriendsService.swift */; };
+		85404447293FAC5100A6E01F /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85404446293FAC5100A6E01F /* NetworkEnvironment.swift */; };
+		85404449293FAE5200A6E01F /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85404448293FAE5100A6E01F /* NetworkMethod.swift */; };
+		8540444C293FB47300A6E01F /* NetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540444B293FB47300A6E01F /* NetworkRoute.swift */; };
+		8542AD2D294794380011BBF4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542AD2C294794380011BBF4 /* NetworkError.swift */; };
+		8542AD332947C2640011BBF4 /* FriendsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542AD322947C2640011BBF4 /* FriendsRoute.swift */; };
 		854F2CD129366975009C36DB /* FriendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854F2CD029366975009C36DB /* FriendsModel.swift */; };
 		854F2CD829367FA5009C36DB /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 854F2CD729367FA5009C36DB /* ColorAssets.xcassets */; };
 		854F2CDA29368158009C36DB /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854F2CD929368158009C36DB /* Color+Extensions.swift */; };
 		85575CBE2923FAE8005D61A2 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85575CBD2923FAE8005D61A2 /* FriendsViewModel.swift */; };
 		85575CC32923FB1C005D61A2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85575CC22923FB1C005D61A2 /* ProfileView.swift */; };
 		85575CC52923FCB9005D61A2 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85575CC42923FCB9005D61A2 /* ProfileViewModel.swift */; };
+		8569AC902943631B008E9A78 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8569AC8F2943631B008E9A78 /* Resources.swift */; };
+		8569AC9229436BB0008E9A78 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8569AC9129436BB0008E9A78 /* NetworkManager.swift */; };
 		858F4ADA29271F0700618A9C /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F4AD929271F0700618A9C /* RoundedImage.swift */; };
 		85B3551329231E9000098FEB /* Screen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3551229231E9000098FEB /* Screen+Extension.swift */; };
 		85B355182923ED1500098FEB /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B355172923ED1500098FEB /* FriendsView.swift */; };
+		85C843E9294CA8BB00F8B67D /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C843E8294CA8BB00F8B67D /* Encodable+Extension.swift */; };
+		85C843EB294CAB2C00F8B67D /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C843EA294CAB2C00F8B67D /* Endpoints.swift */; };
 		85F3B2FF2922CD66004CA97A /* DisplayDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3B2FE2922CD66004CA97A /* DisplayDataCell.swift */; };
 		85FC2C4F29280DDE001BF8EE /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC2C4E29280DDE001BF8EE /* MemoriesView.swift */; };
 		85FC2C5329280E27001BF8EE /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC2C5229280E27001BF8EE /* FriendsCell.swift */; };
@@ -50,15 +61,27 @@
 
 /* Begin PBXFileReference section */
 		8528B9DF292D5017008EE3B5 /* SectionsFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsFriendsView.swift; sourceTree = "<group>"; };
+		852C1AC52948A08300256321 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
+		852C1AC82948DEC700256321 /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsService.swift; sourceTree = "<group>"; };
+		85404446293FAC5100A6E01F /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
+		85404448293FAE5100A6E01F /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		8540444B293FB47300A6E01F /* NetworkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRoute.swift; sourceTree = "<group>"; };
+		8542AD2C294794380011BBF4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8542AD322947C2640011BBF4 /* FriendsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRoute.swift; sourceTree = "<group>"; };
 		854F2CD029366975009C36DB /* FriendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsModel.swift; sourceTree = "<group>"; };
 		854F2CD729367FA5009C36DB /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		854F2CD929368158009C36DB /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		85575CBD2923FAE8005D61A2 /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		85575CC22923FB1C005D61A2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		85575CC42923FCB9005D61A2 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		85598940294CEBF20024C7D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8569AC8F2943631B008E9A78 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		8569AC9129436BB0008E9A78 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		858F4AD929271F0700618A9C /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		85B3551229231E9000098FEB /* Screen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screen+Extension.swift"; sourceTree = "<group>"; };
 		85B355172923ED1500098FEB /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		85C843E8294CA8BB00F8B67D /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		85C843EA294CAB2C00F8B67D /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		85F3B2FE2922CD66004CA97A /* DisplayDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataCell.swift; sourceTree = "<group>"; };
 		85FC2C4E29280DDE001BF8EE /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MemoriesView.swift; path = BeFake/Components/View/MemoriesView.swift; sourceTree = SOURCE_ROOT; };
 		85FC2C5229280E27001BF8EE /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
@@ -101,6 +124,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85404445293FAC3B00A6E01F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8569AC9129436BB0008E9A78 /* NetworkManager.swift */,
+				852C1AC52948A08300256321 /* NetworkViewModel.swift */,
+				85404446293FAC5100A6E01F /* NetworkEnvironment.swift */,
+				8540444B293FB47300A6E01F /* NetworkRoute.swift */,
+				8569AC8F2943631B008E9A78 /* Resources.swift */,
+				8542AD2C294794380011BBF4 /* NetworkError.swift */,
+				85404448293FAE5100A6E01F /* NetworkMethod.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8542AD302947C23D0011BBF4 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				85C843EA294CAB2C00F8B67D /* Endpoints.swift */,
+				8542AD312947C2560011BBF4 /* Friends */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		8542AD312947C2560011BBF4 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				8542AD322947C2640011BBF4 /* FriendsRoute.swift */,
+				852C1AC82948DEC700256321 /* FriendsService.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
 		854F2CCE29366955009C36DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +210,7 @@
 			children = (
 				85B3551229231E9000098FEB /* Screen+Extension.swift */,
 				854F2CD929368158009C36DB /* Color+Extensions.swift */,
+				85C843E8294CA8BB00F8B67D /* Encodable+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -305,7 +361,10 @@
 		C3DAAE76291B2EFD00030A54 /* BeFake */ = {
 			isa = PBXGroup;
 			children = (
+				85598940294CEBF20024C7D7 /* Info.plist */,
 				C332CA8F291DDB22008B211D /* Commum */,
+				85404445293FAC3B00A6E01F /* Network */,
+				8542AD302947C23D0011BBF4 /* Repositories */,
 				C332CA91291DDB38008B211D /* Scenes */,
 				854F2CCE29366955009C36DB /* Models */,
 				C332CA98291DE2AA008B211D /* Components */,
@@ -473,16 +532,27 @@
 			files = (
 				85B3551329231E9000098FEB /* Screen+Extension.swift in Sources */,
 				C3DAAE7A291B2EFD00030A54 /* HomeView.swift in Sources */,
+				852C1AC92948DEC700256321 /* FriendsService.swift in Sources */,
 				85575CC32923FB1C005D61A2 /* ProfileView.swift in Sources */,
+				8569AC9229436BB0008E9A78 /* NetworkManager.swift in Sources */,
 				85B355182923ED1500098FEB /* FriendsView.swift in Sources */,
 				C332CA9B291DE2DE008B211D /* HomeViewCell.swift in Sources */,
 				85FC2C4F29280DDE001BF8EE /* MemoriesView.swift in Sources */,
 				85F3B2FF2922CD66004CA97A /* DisplayDataCell.swift in Sources */,
+				852C1AC62948A08300256321 /* NetworkViewModel.swift in Sources */,
 				C332CA97291DDB9B008B211D /* HomeViewModel.swift in Sources */,
+				8542AD2D294794380011BBF4 /* NetworkError.swift in Sources */,
+				8540444C293FB47300A6E01F /* NetworkRoute.swift in Sources */,
 				85FC2C5329280E27001BF8EE /* FriendsCell.swift in Sources */,
 				854F2CD129366975009C36DB /* FriendsModel.swift in Sources */,
 				85575CC52923FCB9005D61A2 /* ProfileViewModel.swift in Sources */,
+				85C843EB294CAB2C00F8B67D /* Endpoints.swift in Sources */,
+				8542AD332947C2640011BBF4 /* FriendsRoute.swift in Sources */,
+				85C843E9294CA8BB00F8B67D /* Encodable+Extension.swift in Sources */,
 				854F2CDA29368158009C36DB /* Color+Extensions.swift in Sources */,
+				85404447293FAC5100A6E01F /* NetworkEnvironment.swift in Sources */,
+				85404449293FAE5200A6E01F /* NetworkMethod.swift in Sources */,
+				8569AC902943631B008E9A78 /* Resources.swift in Sources */,
 				8528B9E0292D5017008EE3B5 /* SectionsFriendsView.swift in Sources */,
 				C3DAAE78291B2EFD00030A54 /* BeFakeApp.swift in Sources */,
 				858F4ADA29271F0700618A9C /* RoundedImage.swift in Sources */,
@@ -648,6 +718,7 @@
 				DEVELOPMENT_TEAM = Z86DZ4SUMG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeFake/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -681,6 +752,7 @@
 				DEVELOPMENT_TEAM = Z86DZ4SUMG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeFake/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

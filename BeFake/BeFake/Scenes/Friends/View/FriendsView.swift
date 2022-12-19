@@ -10,45 +10,59 @@ import SwiftUI
 struct FriendsView: View {
     @Environment(\.dismiss) private var dismiss
     
-    @ObservedObject private var viewModel: FriendsViewModel
+    @StateObject private var viewModel = FriendsViewModel()
     
     @State private var searchedText = ""
+    @State private var showingAlert = false
     
-    init(viewModel: FriendsViewModel = .init()) {
-        self.viewModel = viewModel
-    }
     var body: some View {
-        ScrollView {
-            VStack {
-                TextField(" \(Image(systemName: "magnifyingglass")) Procure por mais pessoas!", text: $searchedText)
-                    .padding()
-                    .frame(width: UIScreen.screenWidht - 20, height: 55, alignment: .center)
-                    .overlay(
-                            RoundedRectangle(cornerRadius: 14)
-                                .stroke(.gray, lineWidth: 2)
-                        )
-                    .padding()
-                
-                SectionFriendsView(viewModel.data)
+        VStack {
+            viewModel.resource.isLoading() {
+                Group  {
+                    Spacer()
+                    Text("LOADING")
+                    Spacer()
+                }
             }
-            .navigationTitle("BeFake")
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(
-                leading:
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        Image(systemName: "chevron.backward")
-                            .foregroundColor(.lightGray)
-                    })
-            )
-        }
+            
+            viewModel.resource.hasError() { error in
+                Text(error.localizedDescription)
+            }
+            
+            viewModel.resource.hasResource { data in
+                ScrollView {
+                    VStack {
+                        TextField(" \(Image(systemName: "magnifyingglass")) Procure por mais pessoas!", text: $searchedText)
+                            .padding()
+                            .frame(width: UIScreen.screenWidht - 20, height: 55, alignment: .center)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 14)
+                                    .stroke(.gray, lineWidth: 2)
+                            )
+                            .padding()
+                        
+                        SectionFriendsView(data)
+                    }
+                    .navigationTitle("BeFake")
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarItems(
+                        leading:
+                            Button(action: {
+                                dismiss()
+                            }, label: {
+                                Image(systemName: "chevron.backward")
+                                    .foregroundColor(.lightGray)
+                            })
+                    )
+                }
+            }
+        }.onAppear(perform: viewModel.onAppear)
     }
 }
 
-struct FriendsView_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendsView()
-    }
-}
+//struct FriendsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FriendsView()
+//    }
+//}
