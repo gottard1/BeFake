@@ -7,7 +7,7 @@
 
 import Combine
 
-class FriendsViewModel: Service, ObservableObject {
+class FriendsViewModel: NetworkViewModel, ObservableObject {
     
     typealias NetworkResource = FriendsModel
     

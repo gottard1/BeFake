@@ -7,6 +7,13 @@
 
 import Combine
 
-class HomeViewModel: ObservableObject {
+class HomeViewModel: NetworkViewModel, ObservableObject {
+    
+    typealias NetworkResource = HomeModel
+    
+    var route: NetworkRoute = HomeTarget.list
+    var resource: Resource<HomeModel> = .loading
+    var bag: Set<AnyCancellable> = Set<AnyCancellable>()
+    var network: Network = HomeService()
     
 }

@@ -6,15 +6,9 @@
 //
 
 import Foundation
-import Combine
 
-final class FriendsService: Network, Service {
+struct FriendsService: Network {
     
-    typealias NetworkResource = FriendsModel
     
-    var route: NetworkRoute = FriendsTarget.list
-    var resource: Resource<FriendsModel> = .loading
-    var bag: Set<AnyCancellable> = Set<AnyCancellable>()
-    var network: Network = FriendsService()
     
 }

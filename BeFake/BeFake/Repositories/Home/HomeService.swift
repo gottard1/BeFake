@@ -7,13 +7,8 @@
 
 import Foundation
 
-struct HomeService: Service {
+struct HomeService: Network {
     
-    typealias NetworkResource = HomeModel
-    
-    var route: NetworkRoute = HomeTarget.list
-    var resource: Resource<HomeModel> = .loading
-    var bag: Set<AnyCancellable> = Set<AnyCancellable>()
-    var network: Network = HomeService()
+    var decoder: JSONDecoder = .init()
     
 }
