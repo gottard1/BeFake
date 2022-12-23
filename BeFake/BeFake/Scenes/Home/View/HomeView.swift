@@ -32,12 +32,12 @@ struct HomeView: View {
                             EmptyView()
                         }
                         
-                        ForEach(viewModel.data) { data in
-                            HomeViewCell(data)
-                        }
-                        .onAppear {
-                            self.proxy = value
-                        }
+//                        ForEach(viewModel.data) { data in
+//                            HomeViewCell(data)
+//                        }
+//                        .onAppear {
+//                            self.proxy = value
+//                        }
                     }
                 }
             }

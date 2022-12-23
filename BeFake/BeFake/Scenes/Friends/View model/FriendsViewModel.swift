@@ -7,18 +7,13 @@
 
 import Combine
 
-class FriendsViewModel: NetworkViewModel, ObservableObject {
+class FriendsViewModel: Service, ObservableObject {
     
     typealias NetworkResource = FriendsModel
     
-    var route: NetworkRoute = FriendsRoute.friends
+    var route: NetworkRoute = FriendsTarget.list
     var resource: Resource<FriendsModel> = .loading
     var bag: Set<AnyCancellable> = Set<AnyCancellable>()
-    var network: NetworkManager
-    
-    init(with network: NetworkManager = FriendsService()) {
-        self.network = network
-    }
-    
+    var network: Network = FriendsService()
     
 }

@@ -8,10 +8,14 @@
 import Foundation
 
 struct Endpoints {
-    static let baseURL = "http://127.0.0.1:8000/"
+    static let baseURL = "http://127.0.0.1:8080/"
+    
+    struct Home {
+        static let list = "home/list"
+    }
     
     struct Friends {
-        static let friends = "Friends.json"
+        static let list = "friends/list"
     }
     
 }

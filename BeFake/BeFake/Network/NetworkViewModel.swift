@@ -14,7 +14,7 @@ protocol NetworkViewModel: ObservableObject {
     
     var objectWillChange: ObservableObjectPublisher { get }
     var resource: Resource<NetworkResource> { get set }
-    var network: NetworkManager { get set }
+    var network: Network { get set }
     var route: NetworkRoute { get }
     var bag: Set<AnyCancellable> { get set }
     

@@ -7,18 +7,11 @@
 
 import SwiftUI
 
-struct HomeCellType: Identifiable {
-    var id: Int
-    var userData: UserData
-    var picture: String
-    var title: String?
-}
-
 struct HomeViewCell: View {
     
-    let data: HomeCellType
+    let data: HomePost
     
-    init(_ data: HomeCellType) {
+    init(_ data: HomePost) {
         self.data = data
     }
     
@@ -29,7 +22,7 @@ struct HomeViewCell: View {
             UserInformationCell(data: data.userData)
                 .padding(8)
             
-            Image(data.picture)
+            Image(data.backPhoto)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: UIScreen.screenWidht - 10, height: UIScreen.screenWidht * 1.3)

@@ -1,5 +1,5 @@
 //
-//  FriendsRoute.swift
+//  FriendsTarget.swift
 //  BeFake
 //
 //  Created by Premiersoft on 12/12/22.
@@ -7,22 +7,22 @@
 
 import Foundation
 
-enum FriendsRoute {
-    case friends
+enum FriendsTarget {
+    case list
 }
 
-extension FriendsRoute: NetworkRoute {
+extension FriendsTarget: NetworkRoute {
     
     var path: String {
         switch self {
-        case .friends:
-            return Endpoints.Friends.friends
+        case .list:
+            return Endpoints.Friends.list
         }
     }
     
     var method: NetworkMethod {
         switch self {
-        case .friends:
+        case .list:
             return .get
         }
     }

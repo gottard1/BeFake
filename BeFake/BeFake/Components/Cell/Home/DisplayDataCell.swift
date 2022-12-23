@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-struct UserData {
-    var profileImage: String
-    var name: String
-    var hours: String
-}
-
 struct UserInformationCell: View {
     
     let data: UserData

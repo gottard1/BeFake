@@ -6,10 +6,15 @@
 //
 
 import Foundation
+import Combine
 
-
-struct FriendsService: NetworkManager {
+final class FriendsService: Network, Service {
     
-    var decoder: JSONDecoder = JSONDecoder()
+    typealias NetworkResource = FriendsModel
+    
+    var route: NetworkRoute = FriendsTarget.list
+    var resource: Resource<FriendsModel> = .loading
+    var bag: Set<AnyCancellable> = Set<AnyCancellable>()
+    var network: Network = FriendsService()
     
 }

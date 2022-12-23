@@ -5,17 +5,18 @@
 //  Created by Premiersoft on 09/12/22.
 //
 
-import SwiftUI
+import Foundation
 import Combine
 
-
-protocol NetworkManager {
-    
-    var decoder: JSONDecoder { get set }
-    
+protocol Network {
+    var decoder: JSONDecoder { get }
 }
 
-extension NetworkManager {
+extension Network {
+    
+    var decoder: JSONDecoder {
+        return JSONDecoder()
+    }
     
     func execute<T: Decodable>(route: NetworkRoute) -> AnyPublisher<T, Error> {
         
